@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    font-family: 'Ancizar Serif', serif;
+    background-color: #1e1e2f;
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #05b663;
+    margin: 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #151520;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #05b663;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-container nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-container a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.nav-container a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #05b663;
+    transition: 0.3s ease;
+}
+
+.nav-container a:hover::after {
+    width: 100%;
+}
+
+button.glow-on-hover {
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid #23352f;
+    color: #05b663;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button.glow-on-hover:hover {
+    background-color: #05b663;
+    color: #1e1e2f;
+}
+
+/* Sections */
+section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #05b663;
+    border-left: 4px solid #05b663;
+    padding-left: 1rem;
+}
+
+/* Home Section */
+#homeSection {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZpcnN0JTIwY29tcGFueXxlbnwwfHx8fDE2OTI3NTQ5NzE&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 3rem;
+    color: #fff;
+    border-radius: 12px;
+}
+
+#homeName {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+#homeSection span {
+    font-size: 1.2rem;
+    display: block;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.cvbutton {
+    display: flex;
+    gap: 1rem;
+}
+
+/* About */
+.about-me h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#myspan {
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #dddddd;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Skills */
+.skills-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills-sections h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Education and Experience */
+section#Education div,
+section#Exprience span {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+/* Contact */
+.contact-form {
+  max-width:100%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(35, 41, 54, 0.3); /* Transparent background */
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid #707070;
+  backdrop-filter: blur(8px);
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  color: #05b663;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid #4a4d4b;
+  color: #ffffff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #22fa83;
+  box-shadow: 0 0 5px #05b663;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+/* Reuse existing button style */
+.contact-form button {
+  margin-top: 10px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #151520;
+    text-align: center;
+    padding: 1rem;
+    color: #999;
+}
