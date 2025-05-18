@@ -6,6 +6,9 @@
   <title>Balaji Krishnan</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
+</body>
+
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -23,7 +26,7 @@
         </ul>
       </nav>
     </div>
-    <button class="glow-on-hover" type="button">Contact Me!</button>
+    <button class="glow-on-hover" type="button"  onclick="scrollToContact()">Contact Me!</button>
   </div>
 
   <!-- Home Section -->
@@ -36,8 +39,8 @@
         </span>
       </div>
       <div class="cvbutton">
-        <button class="glow-on-hover">Download CV</button>
-        <button class="glow-on-hover">Get in Touch</button>
+        <button class="glow-on-hover" onclick="downloadCV()">Download CV</button>
+        <button class="glow-on-hover" onclick="scrollToContact()">Get in Touch</button>
       </div>
     </div>
   </section>
@@ -169,7 +172,7 @@
   <!-- Contact Section -->
 <section id="Contact">
     <h2>Contact Me</h2>
-    <form class="contact-form" action="mailto:balaji.krishnan@example.com" method="POST" enctype="text/plain">
+    <form class="contact-form" onsubmit="return sendEmail(event)">
         <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required />
@@ -192,7 +195,7 @@
 
         <button type="submit" class="glow-on-hover">Send Email</button>
     </form>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer>

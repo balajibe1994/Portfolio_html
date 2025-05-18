@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Ancizar Serif', serif;
     background-color: #1e1e2f;
