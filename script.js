@@ -2,6 +2,12 @@ function scrollToContact() {
   document.getElementById('Contact').scrollIntoView({ behavior: 'smooth' });
 }
 
+function scrollToContactAndClose() {
+  document.getElementById('Contact').scrollIntoView({ behavior: 'smooth' });
+  toggleNav(); // Close the drawer after clicking "Contact Me"
+}
+
+
 function downloadCV() {
   const link = document.createElement('a');
   link.href = '/assets/balaji_krishnan_cv.pdf'; // Replace with your actual file path
@@ -21,4 +27,13 @@ function sendEmail(event) {
 
   window.location.href = `mailto:balajibe1994@gmail.com?subject=${subject}&body=${body}`;
   return false;
+}
+
+function toggleNav() {
+  const mobileNavDrawer = document.getElementById("mobileNavDrawer");
+  if (mobileNavDrawer.style.width === "0px" || mobileNavDrawer.style.width === "") {
+    mobileNavDrawer.style.width = "70%"; // Open the drawer
+  } else {
+    mobileNavDrawer.style.width = "0px"; // Close the drawer
+  }
 }

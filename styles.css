@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll when drawer is open */
 }
 
 header h1 {
@@ -37,14 +38,13 @@ header h1 {
     gap: 2rem;
 }
 
-.nav-container nav ul {
+.desktop-nav ul {
     display: flex;
     list-style: none;
     gap: 1rem;
     margin: 0;
     padding: 0;
 }
-
 
 .nav-container a {
     color: #ffffff;
@@ -90,6 +90,7 @@ section {
     padding: 3rem 2rem;
     max-width: 1200px;
     margin: auto;
+    scroll-margin-top: 100px;
 }
 
 h2 {
@@ -165,7 +166,7 @@ p {
 
 /* Education and Experience */
 section#Education div,
-section#Exprience span {
+section#Experience div {
     font-size: 1.1rem;
     color: #ddd;
     margin-bottom: 1rem;
@@ -231,4 +232,159 @@ footer {
     text-align: center;
     padding: 1rem;
     color: #999;
+}
+
+
+/* Mobile Navigation Styles */
+.menu-icon {
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #05b663;
+  padding: 5px;
+  /* Removed border and border-radius */
+}
+
+.mobile-nav-drawer {
+  height: 100%;
+  width: 0; /* Hidden by default */
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  background-color: #151520;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-left: 2px solid #05b663;
+}
+
+.mobile-nav-drawer nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-drawer nav ul li {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #f4f4f4;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.mobile-nav-drawer nav ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.mobile-nav-drawer nav ul li a:hover,
+.mobile-nav-drawer nav ul li button.glow-on-hover:hover {
+  background-color: #05b663;
+  color: #1e1e2f;
+  border-color: #05b663;
+}
+
+.mobile-nav-drawer .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 1rem;
+  color: #f4f4f4;
+  cursor: pointer;
+  background-color: #05b663; 
+  border-radius: 50%; 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1; 
+}
+
+.mobile-nav-drawer .glow-on-hover {
+    width: fit-content;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .desktop-nav, .desktop-contact-button {
+    display: none; /* Hide desktop nav and contact button */
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon on mobile */
+  }
+
+  .nav-container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #homeSection {
+    height: 60vh;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  #homeName {
+    font-size: 2rem;
+  }
+
+  #homeSection span {
+    font-size: 1rem;
+  }
+
+  .cvbutton {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cvbutton button {
+    width: 80%;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    padding-left: 0.8rem;
+  }
+
+  .skills-sections {
+    grid-template-columns: 1fr; /* Stack skills on mobile */
+  }
+
+  .mobile-nav-drawer {
+    width: 0; /* Start closed */
+  }
+
+  .mobile-nav-drawer.open {
+    width: 70%; /* Adjust as needed for mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+    #homeSection {
+        height: 50vh;
+    }
+
+    #homeName {
+        font-size: 1.8rem;
+    }
+
+    #homeSection span {
+        font-size: 0.9rem;
+    }
 }

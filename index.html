@@ -6,16 +6,12 @@
   <title>Balaji Krishnan</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:wght@400;700&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
-</body>
-
 </head>
 <body>
-  <!-- Navigation Bar -->
   <div class="nav-container">
     <div class="nav-left">
       <header><h1>BK</h1></header>
-      <nav>
+      <nav class="desktop-nav">
         <ul>
           <li><a href="#homeSection">Home</a></li>
           <li><a href="#About">About</a></li>
@@ -26,10 +22,24 @@
         </ul>
       </nav>
     </div>
-    <button class="glow-on-hover" type="button"  onclick="scrollToContact()">Contact Me!</button>
+    <button class="glow-on-hover desktop-contact-button" type="button"  onclick="scrollToContact()">Contact Me!</button>
+    <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
   </div>
 
-  <!-- Home Section -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="close-btn" onclick="toggleNav()">&#x2715;</div> <nav>
+      <ul>
+        <li><a href="#homeSection" onclick="toggleNav()">Home</a></li>
+        <li><a href="#About" onclick="toggleNav()">About</a></li>
+        <li><a href="#Skills" onclick="toggleNav()">Skills</a></li>
+        <li><a href="#Experience" onclick="toggleNav()">Experience</a></li>
+        <li><a href="#Education" onclick="toggleNav()">Education</a></li>
+        <li><a href="#Projects" onclick="toggleNav()">Projects</a></li>
+        <li><button class="glow-on-hover" type="button"  onclick="scrollToContactAndClose()">Contact Me!</button></li>
+      </ul>
+    </nav>
+  </div>
+
   <section id="homeSection">
     <div class="homestatic">
       <div class="Home">
@@ -45,7 +55,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="About">
     <h2>About Me</h2>
     <div class="about-me">
@@ -60,7 +69,6 @@
     </p>
   </section>
 
-  <!-- Skills Section -->
   <section id="Skills">
     <h2>Skills</h2>
     <div class="skills-sections">
@@ -121,7 +129,6 @@
     </div>
   </section>
 
-  <!-- Experience Section -->
   <section id="Experience">
     <h2>Experience</h2>
     <div>
@@ -131,7 +138,6 @@
     </div>
   </section>
 
-  <!-- Education Section -->
   <section id="Education">
     <h2>Education</h2>
     <div>
@@ -148,7 +154,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="Projects">
     <h2>Projects</h2>
     <div>
@@ -168,9 +173,7 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <!-- Contact Section -->
-<section id="Contact">
+  <section id="Contact">
     <h2>Contact Me</h2>
     <form class="contact-form" onsubmit="return sendEmail(event)">
         <div class="form-group">
@@ -197,9 +200,9 @@
     </form>
   </section>
 
-  <!-- Footer -->
   <footer>
     <span>&copy; 2025 Balaji Krishnan. All rights reserved.</span>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
